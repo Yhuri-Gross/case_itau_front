@@ -1,0 +1,16 @@
+<h2>Novo Cliente</h2>
+
+<form (ngSubmit)="salvar()">
+  <div class="div-novo-cliente">
+    <label>Nome</label>
+    <input [(ngModel)]="cliente.nome" name="nome">
+
+    <label>Email</label>
+    <input [(ngModel)]="cliente.email" name="email">
+  </div>
+  
+
+
+  <button type="submit">Salvar</button>
+
+</form>
