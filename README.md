@@ -20,38 +20,47 @@ A aplicação consome uma API REST desenvolvida em **.NET**.
 # 📁 Estrutura do projeto
 
 ```
-src
-│
-├── app
-│   ├── models
-│   │   └── cliente.model.ts
-│   │
-│   ├── services
-│   │   └── cliente.service.ts
-│   │
-│   ├── components
-│   │   ├── clientes-list
-│   │   └── cliente-form
-│   │
-│   └── app.routes.ts
-│
-└── environments
+src/app
+├── models
+├── pages
+│   ├── cliente-form
+│   ├── clientes-list
+│   └── login
+├── services
+├── app.routes.ts
+├── app.config.ts
+├── auth.guard.ts
+└── auth.interceptor.ts
 ```
 
 ---
 
-# ⚙️ Funcionalidades
+## Funcionalidades
+- cadastro de cliente
+- login
+- armazenamento do token JWT
+- envio automático do token nas requisições
+- visualização da própria conta
+- visualização de todos os clientes para admin
+- depósito
+- saque
+- logout
 
-### Clientes
+---
 
-* Listar clientes
-* Criar novo cliente
-* Excluir cliente
+## Perfis de Uso
 
-### Operações financeiras
+### Usuário comum
+- pode se cadastrar
+- pode realizar login
+- visualiza apenas a própria conta
+- realiza depósito e saque na própria conta
 
-* Depositar valor
-* Sacar valor
+### Admin
+- realiza login
+- visualiza a lista completa de clientes
+- pode cadastrar novos clientes
+- pode realizar operações em qualquer conta
 
 ---
 
@@ -136,7 +145,6 @@ http://localhost:5000
 * Feedback visual para operações
 * Loading states
 * Paginação da tabela
-* Testes unitários no frontend
 * Melhorias de UX/UI
 
 ---
