@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f7f8;
+  color: #222222;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a {
+  color: #ff6200;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input, button {
+  font: inherit;
+}

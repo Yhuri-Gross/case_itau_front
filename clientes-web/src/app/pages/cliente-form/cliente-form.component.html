@@ -1,0 +1,58 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="brand-strip"></div>
+
+    <div class="auth-header">
+      <span class="brand-badge">Banco Trading Cripto</span>
+      <h1>Criar conta</h1>
+      <p>Cadastre seus dados para acessar sua conta digital.</p>
+    </div>
+
+    <form class="auth-form" (ngSubmit)="salvar()">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input
+          id="nome"
+          [(ngModel)]="cliente.nome"
+          name="nome"
+          type="text"
+          placeholder="Digite seu nome completo"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          id="email"
+          [(ngModel)]="cliente.email"
+          name="email"
+          type="email"
+          placeholder="seuemail@exemplo.com"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input
+          id="senha"
+          [(ngModel)]="cliente.senha"
+          name="senha"
+          type="password"
+          placeholder="Crie uma senha"
+          required
+        />
+      </div>
+
+      <button class="primary-btn" type="submit">Criar conta</button>
+    </form>
+
+    <p class="error-message" *ngIf="erro">{{ erro }}</p>
+
+    <div class="auth-footer">
+      <span>Já tem conta?</span>
+      <a routerLink="/login">Entrar</a>
+    </div>
+  </div>
+</div>

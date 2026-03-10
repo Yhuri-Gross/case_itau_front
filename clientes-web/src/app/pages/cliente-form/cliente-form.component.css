@@ -1,0 +1,120 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    linear-gradient(135deg, rgba(255, 98, 0, 0.08), rgba(255, 255, 255, 0.9)),
+    #f7f7f8;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #ececec;
+}
+
+.brand-strip {
+  height: 8px;
+  background: linear-gradient(90deg, #ff6200, #ff8a00);
+}
+
+.auth-header {
+  padding: 32px 32px 16px;
+}
+
+.brand-badge {
+  display: inline-block;
+  margin-bottom: 12px;
+  background: rgba(255, 98, 0, 0.1);
+  color: #ff6200;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.auth-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.auth-header p {
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+}
+
+.auth-form {
+  padding: 8px 32px 8px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+}
+
+.form-group input {
+  height: 48px;
+  border: 1px solid #d9d9d9;
+  border-radius: 12px;
+  padding: 0 14px;
+  background: #fff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #ff6200;
+  box-shadow: 0 0 0 4px rgba(255, 98, 0, 0.12);
+}
+
+.primary-btn {
+  width: 100%;
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+  background: #ff6200;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #e25700;
+  transform: translateY(-1px);
+}
+
+.error-message {
+  margin: 8px 32px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff1f0;
+  color: #c62828;
+  font-size: 14px;
+  border: 1px solid #ffd3cf;
+}
+
+.auth-footer {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 32px 32px;
+  font-size: 14px;
+  color: #666666;
+}
