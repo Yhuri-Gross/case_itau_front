@@ -4,32 +4,38 @@ import { Observable } from 'rxjs';
 import { Cliente } from '../models/cliente.model';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ClienteService {
+  private api = 'http://localhost:5000/clientes';
 
-    private api = 'http://localhost:5000/clientes';
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) { }
+  listar(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.api);
+  }
 
-    listar(): Observable<Cliente[]> {
-        return this.http.get<Cliente[]>(this.api);
-    }
+  buscarPorId(id: number): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.api}/${id}`);
+  }
 
-    criar(cliente: Cliente) {
-        return this.http.post(this.api, cliente);
-    }
+  buscarMeuPerfil(): Observable<Cliente> {
+    return this.http.get<Cliente>(`${this.api}/me`);
+  }
 
-    deletar(id: number) {
-        return this.http.delete(`${this.api}/${id}`);
-    }
+  criar(cliente: Cliente) {
+    return this.http.post(this.api, cliente);
+  }
 
-    depositar(id: number, valor: number) {
-        return this.http.post(`${this.api}/${id}/depositar`, { valor });
-    }
+  deletar(id: number) {
+    return this.http.delete(`${this.api}/${id}`);
+  }
 
-    sacar(id: number, valor: number) {
-        return this.http.post(`${this.api}/${id}/sacar`, { valor });
-    }
+  depositar(id: number, valor: number) {
+    return this.http.post(`${this.api}/${id}/depositar`, { valor });
+  }
 
+  sacar(id: number, valor: number) {
+    return this.http.post(`${this.api}/${id}/sacar`, { valor });
+  }
 }

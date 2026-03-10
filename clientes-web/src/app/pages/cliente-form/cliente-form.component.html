@@ -3,14 +3,21 @@
 <form (ngSubmit)="salvar()">
   <div class="div-novo-cliente">
     <label>Nome</label>
-    <input [(ngModel)]="cliente.nome" name="nome">
+    <input [(ngModel)]="cliente.nome" name="nome" required />
 
     <label>Email</label>
-    <input [(ngModel)]="cliente.email" name="email">
+    <input [(ngModel)]="cliente.email" name="email" type="email" required />
+
+    <label>Senha</label>
+    <input [(ngModel)]="cliente.senha" name="senha" type="password" required />
+
+    <button type="submit">Salvar</button>
   </div>
-  
-
-
-  <button type="submit">Salvar</button>
-
 </form>
+
+<p *ngIf="erro">{{ erro }}</p>
+
+<p>
+  Já tem conta?
+  <a routerLink="/login">Entrar</a>
+</p>
