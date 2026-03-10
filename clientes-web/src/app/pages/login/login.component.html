@@ -1,20 +1,46 @@
-<h2>Login</h2>
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="brand-strip"></div>
 
-<form (ngSubmit)="entrar()">
-  <div class="div-login">
-    <label>Email</label>
-    <input [(ngModel)]="form.email" name="email" type="email" required />
+    <div class="auth-header">
+      <span class="brand-badge">Banco Trading Cripto</span>
+      <h1>Acessar conta</h1>
+      <p>Entre com seu e-mail e senha para continuar.</p>
+    </div>
 
-    <label>Senha</label>
-    <input [(ngModel)]="form.senha" name="senha" type="password" required />
+    <form class="auth-form" (ngSubmit)="entrar()">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          id="email"
+          [(ngModel)]="form.email"
+          name="email"
+          type="email"
+          placeholder="seuemail@exemplo.com"
+          required
+        />
+      </div>
 
-    <button type="submit">Entrar</button>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input
+          id="senha"
+          [(ngModel)]="form.senha"
+          name="senha"
+          type="password"
+          placeholder="Digite sua senha"
+          required
+        />
+      </div>
+
+      <button class="primary-btn" type="submit">Entrar</button>
+    </form>
+
+    <p class="error-message" *ngIf="erro">{{ erro }}</p>
+
+    <div class="auth-footer">
+      <span>Ainda não tem conta?</span>
+      <a routerLink="/clientes/novo">Cadastrar</a>
+    </div>
   </div>
-</form>
-
-<p *ngIf="erro">{{ erro }}</p>
-
-<p>
-  Ainda não tem conta?
-  <a routerLink="/clientes/novo">Cadastrar</a>
-</p>
+</div>

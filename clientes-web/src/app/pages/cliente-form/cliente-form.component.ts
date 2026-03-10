@@ -11,6 +11,7 @@ import { Cliente } from '../../models/cliente.model';
   selector: 'app-cliente-form',
   standalone: true,
   templateUrl: './cliente-form.component.html',
+  styleUrl: './cliente-form.component.css',
   imports: [CommonModule, FormsModule, RouterModule]
 })
 export class ClienteFormComponent {
