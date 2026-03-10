@@ -9,10 +9,13 @@ import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/
 
 import { authInterceptor } from './auth.interceptor';
 
+import { LOCALE_ID } from '@angular/core';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
-
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    
     provideBrowserGlobalErrorListeners(),
 
     provideHttpClient(
@@ -23,6 +26,8 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
 
     provideClientHydration(withEventReplay())
+
+    
 
   ]
 };
